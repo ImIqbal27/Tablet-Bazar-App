@@ -10,6 +10,11 @@
     margin: 90px 50px;
 }
 
+.cart-container {
+    background-color: #FFE083;
+    /* background-color: #FFD32D; */
+}
+
 /* For mobile devices */
 @media screen and (max-width:550px) {
     .products-container {
