@@ -1,27 +1,46 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "./Cart.css";
+
 const Cart = ({ cart }) => {
-    // console.log(cart);
+    const [carts, setCarts] = useState([])
+
     let cartList = [];
     for (const product of cart) {
         if (cartList.length < 4) {
             cartList.push(product.name)
         }
         else {
-            // alert("Ops, You cant add more than 4 items !")
+            alert('Ops, You can`t add more than 4 items !');
         }
+    }
+    //random number
+    const [cartListItem, setCartListItem] = useState([]);
+    const saveCart = [];
+    const randomItem = (cartListItem) => {
+        const random = Math.floor(Math.random() * cartList.length - 1)
+        saveCart.push(cartListItem[random]);
+        setCartListItem(saveCart);
+        console.log(cartListItem, "random");
+    }
+
+
+
+    const removeItems = () => {
+        cartList.find()
     }
 
     return (
         <div className='cart'>
             <div>
-                <h2>Order Summary</h2>
-                <p>Selected Items:  {cart.length}</p>
-                <p> {cartList}</p>
+                <h2>Selected Items Are Here </h2>
+                {
+                    cartList.map((pro) => (<h4>{pro.toUpperCase()}</h4>))
+                }
+
             </div>
             <div>
-                <button className='btn-choose-1'>CHOOSE 1 FOR ME</button>  <br />
-                <button className='btn-reset'>RESET</button>
+                <button onClick={randomItem} className='btn-choose-1'>CHOOSE 1 FOR ME</button>  <br />
+                <button onClick={removeItems} className='btn-reset'>RESET</button>
             </div>
 
 

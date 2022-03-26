@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import './Product.css';
 
 const Product = ({ handleAddToCart, product }) => {
@@ -13,7 +15,9 @@ const Product = ({ handleAddToCart, product }) => {
                 <p>Brand: {brand.toUpperCase()}</p>
                 <p><small>Ratings: {ratings}</small></p>
             </div>
-            <button onClick={() => handleAddToCart(product)} className='btn-cart'> <p>Add To Cart</p></button>
+            <button onClick={() => handleAddToCart(product)} className='btn-cart'> <p className='btn-text'>Add To Cart </p>
+                <FontAwesomeIcon icon={faShoppingCart}></FontAwesomeIcon>
+            </button>
             {/* ekhane ami product click koorle product ta ke pacchi Shop.js theke  */}
 
         </div>
