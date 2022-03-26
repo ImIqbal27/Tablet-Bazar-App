@@ -2,5 +2,17 @@
     position: sticky;
     top: 0;
     padding: 30px 20px;
-    
+
+}
+
+.btn-choose-1 {
+    padding: 4px 48px;
+    border: 2px solid orange;
+
+}
+
+.btn-reset {
+    padding: 4px 87px;
+    border: 2px solid orange;
+    margin-top: 5px;
 }
