@@ -59,7 +59,7 @@ const Cart = ({ cart }) => {
                     cartList.map((pro) => (<h4>{pro.toUpperCase()}</h4>))
                 }
                 {
-                    <p>Random Mobile: {randomArr}</p>
+                    <p>Random Mobile: {randomArr.toUpperCase()}</p>
                 }
 
             </div>
