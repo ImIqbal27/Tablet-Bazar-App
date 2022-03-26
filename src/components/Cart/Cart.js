@@ -1,32 +1,54 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import "./Cart.css";
 
 const Cart = ({ cart }) => {
-    const [carts, setCarts] = useState([])
+    console.log(cart);
+    const [carts, setCarts] = useState([]);
+
 
     let cartList = [];
     for (const product of cart) {
         if (cartList.length < 4) {
-            cartList.push(product.name)
+            cartList.push(product.name);
+            console.log(cartList.name);
         }
         else {
-            alert('Ops, You can`t add more than 4 items !');
+            // alert('Ops, You can`t add more than 4 items !');
         }
     }
+    const random = Math.ceil(Math.random() * cartList.length) + 0;
+    // console.log(random);
+
+    const ranFun = () => {
+
+
+    }
+    let randomArr = (cartList[random]);
+    function ranFun2() {
+
+        console.log(randomArr);
+        return randomArr;
+
+    }
     //random number
-    const [cartListItem, setCartListItem] = useState([]);
+    // const [cartListItem, setCartListItem] = useState([]);
     const saveCart = [];
     const randomItem = (cartListItem) => {
-        const random = Math.floor(Math.random() * cartList.length - 1)
-        saveCart.push(cartListItem[random]);
-        setCartListItem(saveCart);
-        console.log(cartListItem, "random");
+        // const random = Math.floor(Math.random() * cartList.length - 1)
+        const random = Math.ceil(Math.random() * cartList.length) + 0;
+        console.log(random);
+        // console.log(cartListItem[random]);
+
+        // saveCart.push(cartListItem[random]);
+        // setCartListItem(saveCart);
+        // console.log(cartListItem, "random");
+        console.log(saveCart, " savvee random");
     }
 
 
 
     const removeItems = () => {
-        cartList.find()
+        cart = [];
     }
 
     return (
@@ -36,10 +58,13 @@ const Cart = ({ cart }) => {
                 {
                     cartList.map((pro) => (<h4>{pro.toUpperCase()}</h4>))
                 }
+                {
+                    <p>Random Mobile: {randomArr}</p>
+                }
 
             </div>
             <div>
-                <button onClick={randomItem} className='btn-choose-1'>CHOOSE 1 FOR ME</button>  <br />
+                <button onClick={ranFun2()} className='btn-choose-1'>CHOOSE 1 FOR ME</button>  <br />
                 <button onClick={removeItems} className='btn-reset'>RESET</button>
             </div>
 
